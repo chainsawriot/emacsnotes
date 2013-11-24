@@ -2,6 +2,7 @@
 * undo: C-_
 * Select all: C-x h
 * Goto-line sort cut: M-g g
+* Kill a line: C-k
 
 ## Keyboard Macro
 
@@ -15,6 +16,19 @@
 ## python.el (Ship with emacs)
 * Increase ident: C-c >
 * Decrease ident: C-c <
+
+## useful macros
+
+```{elisp}
+(fset 'pythonevalbuffersplit
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("^Xh^C^R^X1^X2^Xo^Xb*Python*^M" 0 "%d")) arg)))
+
+(fset 'pythonevalregionsplit
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("^C^R^X1^X2^Xo^Xb*Python*^M" 0 "%d")) arg)))
+
+(global-set-key "\C-x\C-kb" 'pythonevalbuffersplit)
+(global-set-key "\C-x\C-kr" 'pythonevalregionsplit)                     
+```
 
 ## C related
 * Compile mode: M-x compile
