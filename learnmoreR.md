@@ -20,7 +20,7 @@ I want to use that slide as the plan to discover and study those unknown functio
 For the evaluation of multiple logical values, e.g. logical vector.
 
 * all: Only return true when all logical values in the collection are true
-* any: Return trye when any logical values in the collection is true 
+* any: Return true when any logical values in the collection is true 
 
 
 ```r
