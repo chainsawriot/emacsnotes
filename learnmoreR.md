@@ -7,9 +7,9 @@ I'd like to start a new project with an uncreative name called "learn more R".
 I want to try this project is because I still have that uneasiness of abusing some R functions to do what they are not supposed to do.
 
 Then, I saw [this](http://datatable.r-forge.r-project.org/JimHoltman.pdf).
-The last slide of Jim Holtman's talk listed "subset of R functions to start with". I have a look at these functions and I know that I am actually not that fluent in those "starter" R functions.
+The last slide of Jim Holtman's talk listed "subset of R functions to start with". I have a look at these functions and I know that I am not well versed in those "beginner" R functions.
 
-For some strangely named functions such as lapply, substr or mtext, I kind of know what they are doing, probably because of their strange names. However, for functions with regular names such as all, any, approx, assign, cut, exist, get, etc... I don't even know their existence, not to mention the functions of those functions.
+For some strangely named functions such as lapply, substr or mtext, I kind of know what they are doing, probably because of their strange names. However, for functions with regular names such as all, any, approx, assign, cut, exist, get, etc... I don't even know their existence, not to mention the functionalities of those functions.
 
 I want to use that slide as the plan to discover and study those unknown functions.
 
