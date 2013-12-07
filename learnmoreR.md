@@ -104,3 +104,107 @@ pigChar(c("Pig", "sucks", "a"))
 ## Error: all(nchar(x) == 1) is not TRUE
 ```
 
+
+## #2: assign, get / mget, exists
+
+7 - Dec - 2013
+
+_assign_ is for assignment. The first argument *x* is the character string. The second argument *value* is the value to be assigned to *x*. A function of generating variables using side effect.
+
+
+```r
+assign("pig", "sucks")  ## exactly the same as: pig <- 'sucks'
+pig
+```
+
+```
+## [1] "sucks"
+```
+
+```r
+assign("pig", "not sucks")
+pig
+```
+
+```
+## [1] "not sucks"
+```
+
+```r
+for (x in 1:6) {
+    assign(paste0("pig", x), 1:x)
+}
+pig5
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+
+NB: Cannot assign element of vectors, names, attributes etc.
+
+_get_ is to get the value of an object by name in character string. 
+
+
+```r
+assign("pig", "is not good")
+pig
+```
+
+```
+## [1] "is not good"
+```
+
+```r
+get("pig") == pig
+```
+
+```
+## [1] TRUE
+```
+
+
+_mget_ is the vectorized version of _get_.
+
+
+```r
+assign("pig1", "good")
+assign("pig2", "bad")
+assign("pig3", "so-so")
+mget(c("pig1", "pig2", "pig3"))
+```
+
+```
+## $pig1
+## [1] "good"
+## 
+## $pig2
+## [1] "bad"
+## 
+## $pig3
+## [1] "so-so"
+```
+
+
+_exists_ is a predicate to check for existence of object by name in character string.
+
+
+```r
+assign("cat1", "goes meow")
+assign("cat2", "what did the fox say?")
+exists("cat1")
+```
+
+```
+## [1] TRUE
+```
+
+```r
+exists("dog1")
+```
+
+```
+## [1] FALSE
+```
+
