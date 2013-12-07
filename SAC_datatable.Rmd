@@ -1,0 +1,48 @@
+# Notes on SAC using data.table
+
+[Link to the original SAC presentation](https://docs.google.com/presentation/d/1iuXjJvX0XkNzR-zAJaljOIREPcVnVm6FvCwjH8bIMYg/edit?usp=sharing)
+
+# Iris data set
+## Slide 27
+
+Calculate the mean and SD of Sepal Length for each species
+
+```{r irisDT1}
+library(data.table)
+iris.dt <- data.table(iris, key="Species") ### create a dt with Species as key
+iris.dt[,list(mean = mean(Sepal.Length), sd = sd(Sepal.Length)),by=Species]
+```
+
+## Slide 30
+Calculate the Species-specific z score
+
+```{r irisDT2}
+iris.dt[,z := (Sepal.Length - mean(Sepal.Length)) / sd(Sepal.Length) ,by=Species]
+```
+
+# Baby name dataset
+## Slide 34-35
+
+Reading csv into data table
+
+```{r bnamereading}
+babyname <- fread("~/Dropbox/SACdemo/bnames.csv")
+setkeyv(babyname, cols = c("year", "sex"))
+```
+
+Get the most popular name by year and sex
+
+```{r mostpopularname}
+babyname[, name[which.max(percent)], by=list(year, sex)]
+```
+
+## Slide 39
+
+Get the total percentage of the first character of the baby names by year and gender
+
+```{r letterfreq, fig.width=7, fig.height=6}
+letterFreq <- babyname[, list(sumPer = sum(percent)), by=list(year, sex, first = tolower(substr(name,1,1)))]
+library(ggplot2)
+ggplot(letterFreq, aes(x=year, y=sumPer, group=sex)) + geom_line(aes(color=sex)) + facet_wrap(~ first, nrow=3)
+
+```
