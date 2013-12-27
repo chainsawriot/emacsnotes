@@ -8,3 +8,11 @@
 (student? sophomore3)
 ```
 
+* equality predicates (such as boolean=?, string=?) can generally be replaced by equal?
+
+```scheme
+(boolean=? #f #f)
+(equal? #f #f)
+```
+
+
