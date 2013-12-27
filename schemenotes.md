@@ -24,6 +24,27 @@
 (equal? #f #f)
 ```
 
+* The difference between _equal?_ and _eq?_ for struct is: equal? check for the
+  structural equality but eq? check for the equality in memory
+  location / same call of the constructor function. (instance
+  equality) Structural equality for opaque struct is only mereinstance identity
+  Ref: Racket Guide 5.5
+
+```scheme
+(struct point (x y) #:transparent)
+(define pt1 (point 1 2))
+(define pt2 (point 1 2))
+(equal? pt1 pt2)
+(eq? pt1 pt2)
+(define pt3 pt1)
+(eq? pt3 pt1)
+
+(struct point-opaque (x y)) ; opaque struct
+(define pt4 (point-opaque 1 2))
+(define pt5 (point-opaque 1 2))
+(equal? pt4 pt5) ; same function as eq?
+```
+
 * For _if_ , 0 and empty are also counted as #t. The only thing
   that is counted as #f is #f only.
 
@@ -42,6 +63,7 @@
 	  [else 'even])
 ```
 
-* _when_ is _if_ without else statement. _unless_ is opposite of
+* _when_ is _if_ without else statement. _unless_ is the opposite of
   _when_
+
 
