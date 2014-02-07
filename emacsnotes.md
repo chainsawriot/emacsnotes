@@ -1,8 +1,10 @@
 ## Common ops
 * undo: C-_
 * Select all: C-x h
-* Goto-line sort cut: M-g g
+* Goto-line short cut: M-g g
 * Kill a line: C-k
+* Move to beginning: C-a
+* Scroll a page: C-v / M-v
 
 ## Keyboard Macro
 
