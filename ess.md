@@ -51,3 +51,5 @@ And try to write some R code in the ESS r console / script.
 
 ### ess-tracebug
 
+[refence](https://code.google.com/p/ess-tracebug/wiki/GettingStarted)
+
