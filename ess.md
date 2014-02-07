@@ -17,3 +17,5 @@ One of the reason why you should use emacs 24 is the package.el is preinstalled.
    '("melpa" . "http://melpa.milkbox.net/packages/") t)
 ```
 
+Use the package-list-packages (M-x package-list-packages) function to
+fire up the package installation screen.
