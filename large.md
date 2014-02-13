@@ -209,6 +209,7 @@ You need to write algorithm yourself.
 
 ## Memory requirement
 
-My Chunking k means - 200M - Virtually forever
-data.frame - ~ 1G to 1.5G - 2 m 40 s 
-bigmemory - 400M - 1 m
+My Chunking k means - 76M - Virtually forever
+data.frame - 916M - 2 m 40 s 
+bigmemory - 316M - 1 m
+
