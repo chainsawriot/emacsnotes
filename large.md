@@ -74,7 +74,7 @@ print(object.size(iris), units = "Kb")
 
 ## One example of overhead: COPY
 
-```{r}
+```{s}
 iris2 <- iris
 tracemem(iris2)
 iris2$Sepal.length.larger.than.5 <- iris2$Sepal.length > 5
@@ -84,7 +84,7 @@ iris2$Sepal.length.larger.than.5 <- iris2$Sepal.length > 5
 
 1. Approximation
 2. Chunking + incremental
-3. HD pointer
+3. File-based pointer
 4. Other solutions: Hadooq, Apache Spark... Not go into detail
 
 ## Approximate answer #1
@@ -144,7 +144,7 @@ file connection can provide the classic C style I/O experience.
 
 DBI is intrinsic chunkable.
 
-```r
+```{s}
 library(RSQLite)
 joinedresults <- dbSendQuery(exampledb,
 "SELECT sbp, dbp, sbp-dbp AS pulsep, snp1, snp3 FROM
@@ -158,7 +158,7 @@ Not go into detail but very useful.
 
 ## Space-time tradeoff
 
-## Model
+Trading time (extra cost for reading chunks) for Space.
 
 ## Approximate answer : Stochastic alogo / online algo
 
@@ -212,5 +212,5 @@ You need to write algorithm yourself.
 Method | Physical RAM usage | Time
 -------|--------------------|-----
 My Chunking k means | 76M | Virtually forever
-data.frame | 916M | 2 m 40 s 
-bigmemory | 316M | 1 m
+data.frame + kmeans() | 916M | 2 m 40 s 
+bigmemory + biganalytics | 316M | 1 m
