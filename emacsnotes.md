@@ -1,10 +1,12 @@
 ## Common ops
-* undo: C-_
+* undo: C-/ (is better than C-_)
 * Select all: C-x h
 * Goto-line short cut: M-g g
 * Kill a line: C-k
 * Move to beginning: C-a
 * Scroll a page: C-v / M-v
+* Help for current mode: C-h m
+* Scroll the split window: CM-v
 
 ## Keyboard Macro
 
