@@ -21,6 +21,9 @@
 * Increase ident: C-c >
 * Decrease ident: C-c <
 
+## ido mode
+* C-j to confirm
+
 ## useful macros
 
 ```{elisp}
