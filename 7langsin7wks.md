@@ -29,7 +29,7 @@ end
 # ruby xyz.rb
 
 # number guessing
-i = rand(100)
+i = rand(101)
 puts 'Guess a number, from 0 to 100'
 while true
 	j = gets.chomp.to_i
