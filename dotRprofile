@@ -1,0 +1,2 @@
+options(repos=c("http://cran.rstudio.com/"))
+Sys.setenv(R_HISTSIZE='100000')
