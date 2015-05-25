@@ -3,10 +3,10 @@
 (add-to-list 'package-archives
    '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(require 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
-(global-auto-composition-mode 1)
+;(require 'auto-complete)
+;(require 'auto-complete-config)
+;(ac-config-default)
+;(global-auto-composition-mode 1)
 
 (setq inhibit-startup-message t)
 
@@ -27,8 +27,8 @@
 
 ;; enable auto-complete for ess
 
-(add-to-list 'ac-sources 'ac-source-R)
-(setq ess-use-auto-complete t)
+;(add-to-list 'ac-sources 'ac-source-R)
+;(setq ess-use-auto-complete t)
 
 ;; change all "yes-or-no-p" to "y-or-n-p"
 
@@ -55,4 +55,4 @@
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.rmd" . markdown-mode) auto-mode-alist))
 
-(setq ess-default-style 'C++)
+;(setq ess-default-style 'C++)
